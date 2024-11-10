@@ -8,8 +8,7 @@ import {
   useAudioTrack,
 } from '@daily-co/daily-react';
 import { Button } from '../ui/button';
-import { Mic, Video, Volume2, VideoOff, VideoIcon, MicOff } from 'lucide-react';
-import { SelectDevice } from '../SelectDevice';
+import { Mic, Video, VideoOff, VideoIcon, MicOff } from 'lucide-react';
 
 export const CameraSettings = ({ actionLabel, onAction, cancelLabel, onCancel }:
   {
@@ -21,15 +20,6 @@ export const CameraSettings = ({ actionLabel, onAction, cancelLabel, onCancel }:
 ) => {
   const daily = useDaily();
   const {
-    currentCam,
-    currentMic,
-    currentSpeaker,
-    microphones,
-    speakers,
-    cameras,
-    setMicrophone,
-    setCamera,
-    setSpeaker,
     refreshDevices,
   } = useDevices();
   const localSessionId = useLocalSessionId();
@@ -84,12 +74,6 @@ export const CameraSettings = ({ actionLabel, onAction, cancelLabel, onCancel }:
                   <VideoOff className='size-5' />
                 )}
               </button>
-              {/* <SelectDevice
-                value={currentCam?.device?.deviceId}
-                devices={cameras}
-                onChange={val => setCamera(val)}
-                Icon={Video}
-              /> */}
             </div>
             <div className='flex items-center justify-center'>
               <button
@@ -102,19 +86,7 @@ export const CameraSettings = ({ actionLabel, onAction, cancelLabel, onCancel }:
                   <MicOff className='size-5' />
                 )}
               </button>
-              {/* <SelectDevice
-                value={currentMic?.device?.deviceId}
-                devices={microphones}
-                onChange={val => setMicrophone(val)}
-                Icon={Mic}
-              /> */}
             </div>
-            {/* <SelectDevice
-              value={currentSpeaker?.device?.deviceId}
-              devices={speakers}
-              onChange={val => setSpeaker(val)}
-              Icon={Volume2}
-            /> */}
           </div>
         )}
       </div>

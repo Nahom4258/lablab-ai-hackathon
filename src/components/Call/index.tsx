@@ -1,14 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
-import { DailyAudio, useParticipantIds, useLocalSessionId, useParticipantProperty, DailyVideo } from '@daily-co/daily-react';
-import { Minimize, Maximize } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { DailyAudio, useParticipantIds, useLocalSessionId } from '@daily-co/daily-react';
 import { cn } from '../../lib/utils';
 import { Video } from '../Video';
-import { Button } from '../ui/button';
 
 export const Call = () => {
   const remoteParticipantIds = useParticipantIds({ filter: 'remote' });
   const localSessionId = useLocalSessionId();
-  const [mode, setMode] = useState<'full' | 'minimal'>('full');
+  const [mode] = useState<'full' | 'minimal'>('full');
   const [currentTimer, setCurrentTimer] = useState(0); // New state for the timer
 
   useEffect(() => {
