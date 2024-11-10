@@ -50,7 +50,7 @@ export const Call = () => {
           }
           /> :
           <div className='relative flex items-center justify-center size-[50vh]'>
-              <p className='text-2xl text-black'>Waiting for others to join...</p>
+              <p className='text-2xl text-black'>Waiting for Emma to join...</p>
             </div>
         }
         {localSessionId && (
